@@ -38,7 +38,7 @@
 <div class='container'>
   <div class='row text-center'>
     <% @posts.each do |post| %>
-    <div class='col-md-6 individual-post-display'>
+    <div class='col-md-6 individual-post-display'> 
       <% if post.imageurl %>
       <%= link_to image_tag(post.imageurl, class: 'img-responsive post-image'), post %>
       <% end %>
