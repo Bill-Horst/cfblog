@@ -1,31 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Post body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class='container'>
+  <div class='row text-center'>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.subtitle %></td>
-        <td><%= post.post_body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class='col-md-6 individual-post-display'>
+      <% if post.imageurl %>
+      <%= image_tag(post.imageurl, class: 'img-responsive post-image') %>
+      <% end %>
+      <%= link_to 'Read', post, :class => "btn btn-success read-post-button" %>
+      <div class=''>
+        <h2><%= post.title %></h2>
+      </div>
+      <div class='caption'>
+        <h4 class='product-description'>"<%= post.subtitle %>"</h4>
+      </div>
+      <div class='thumbnail-product-information'>
+        <div class='row'>
+          <div class='col-sm-6'>
 
-<br>
+            <%= link_to 'Show', post, :class => "btn btn-info" %>
+            <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-warning" %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+
+          </div>
+          <div class='col-sm-6'>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'New Post', new_post_path %>
