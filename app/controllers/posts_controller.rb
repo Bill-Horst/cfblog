@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @first_three_posts = Post.limit(3)
   end
 
   # GET /posts/1

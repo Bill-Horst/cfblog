@@ -46,6 +46,42 @@ body {
 
 // POST PAGE
 
+.carousel-image {
+  height: 500px !important;
+  width: 800px;
+  margin: auto;
+}
+
+.carousel-control:hover {
+  background-color: transparent;
+}
+
+.carousel-caption {
+  margin-bottom: 100px;
+  font-size: 4em;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+.carousel-read-post-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 10%;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.carousel-read-post-button:hover {
+  background-color: black;
+  color: white;
+}
+
 .thumbnail {
   padding-bottom: 20px;
 }
@@ -59,20 +95,13 @@ body {
   height: 150px;
   margin: auto;
   border-radius: 5%;
+  opacity: .75;
+  border: 5px solid transparent;
 }
 
-.read-post-button {
-  background: blue; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(yellow, blue, yellow); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(yellow, blue, yellow); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(yellow, blue, yellow); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(yellow, blue, yellow); /* Standard syntax (must be last) */
-  color: white !important;
+.post-image:hover {
+  opacity: 1;
   border: none;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  border-radius: 50%;
 }
 
 // END POST PAGE
