@@ -1,0 +1,226 @@
+/* line 5, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/pages.scss */
+body {
+  padding-top: 17px;
+}
+/* line 6, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.navbar {
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+}
+
+/* line 12, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+#sign-in-button {
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+/* line 18, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.nav li {
+  padding-right: 5px;
+}
+
+/* line 27, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 32, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+body {
+  margin-bottom: 60px !important;
+}
+
+/* line 36, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px !important;
+  background-color: #f7f7f7;
+}
+
+/* line 49, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.carousel-image {
+  height: 500px !important;
+  width: 800px;
+  margin: auto;
+}
+
+/* line 55, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.carousel-control:hover {
+  background-color: transparent;
+}
+
+/* line 59, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.carousel-caption {
+  margin-bottom: 100px;
+  font-size: 4em;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+/* line 67, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.carousel-read-post-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 10%;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+/* line 80, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.carousel-read-post-button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* line 85, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.thumbnail {
+  padding-bottom: 20px;
+}
+
+/* line 89, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.individual-post-display {
+  height: 300px;
+}
+
+/* line 93, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.post-image {
+  width: 100%;
+  height: 150px;
+  margin: auto;
+  border-radius: 5%;
+  opacity: .75;
+  border: 5px solid transparent;
+}
+
+/* line 102, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.post-image:hover {
+  opacity: 1;
+  border: none;
+}
+
+/* line 112, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.post-title, .post-subtitle {
+  text-align: center;
+}
+
+/* line 116, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/posts.scss */
+.post-body {
+  text-align: justify;
+}
+/* line 1, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /Users/billhorst/Desktop/Rails_Blog/blog/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
