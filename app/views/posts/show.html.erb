@@ -8,6 +8,18 @@
   <%= @post.subtitle %>
 </h2>
 
+<div class='post-category'>
+  <h3>Category: </h3>
+  <p><%= link_to @post.category.name, posts_path(:category => @post.category.id) %></p>
+</div>
+
+<div class='post-tags'>
+  <h4>Tags: </h4>
+  <% @post.tags.each do |tag| %>
+  <p><%= link_to tag.name, posts_path(:tag => tag.id) %></p>
+  <% end %>
+</div>
+
 <p class='post-body'>
   <%= @post.post_body %>
 </p>

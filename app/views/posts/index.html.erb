@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-
+<% if @first_three_posts %>
 <div id="carousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -32,41 +32,53 @@
     <span class="sr-only">Next</span>
   </a>
 </div> <!-- end of carousel -->
+<% end %>
 
 <hr />
 
 <div class='container'>
-  <div class='row text-center'>
-    <% @posts.each do |post| %>
-    <div class='col-md-6 individual-post-display'>
-      <% if post.imageurl %>
-      <%= link_to image_tag(post.imageurl, class: 'img-responsive post-image'), post %>
-      <% end %>
-      <div class=''>
-        <h2><%= post.title %></h2>
-      </div>
-      <div class='caption'>
-        <h4 class='product-description'>"<%= post.subtitle %>"</h4>
-      </div>
-      <div class='thumbnail-product-information'>
-        <div class='row'>
-          <div class='col-sm-6'>
 
-            <%= link_to 'Show', post, :class => "btn btn-info" %>
-            <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-warning" %>
-            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+  <div class="row">
 
+    <div class="col-md-10">
+      <div class='text-center'>
+        <% @posts.each do |post| %>
+        <div class='col-md-6 individual-post-display'>
+          <% if post.imageurl %>
+          <%= link_to image_tag(post.imageurl, class: 'img-responsive post-image'), post %>
+          <% end %>
+          <h2><%= post.title %></h2>
+          <div class='caption'>
+            <h4 class=''>"<%= post.subtitle %>"</h4>
           </div>
-          <div class='col-sm-6'>
-
-
-
+          <% if signed_in? && current_user.admin? %>
+          <div class='row'>
+            <div class='col-sm-6'>
+              <%= link_to 'Show', post, :class => "btn btn-info" %>
+              <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-warning" %>
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+            </div>
           </div>
+          <% end %>
         </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
+
+    <div class="col-md-2">
+      <h1>Categories</h1>
+      <% @categories.each do |category| %>
+      <p><%= link_to category.name, posts_path(:category => category.id) %></p>
+      <% end %>
+
+      <h1>Tags</h1>
+      <% @tags.each do |tag| %>
+      <span><%= link_to tag.name, posts_path(:tag => tag.id) %> </span>
+      <% end %>
+    </div>
+
   </div>
+
 </div>
 
 <% if signed_in? && current_user.admin? %>

@@ -4,8 +4,16 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-    @first_three_posts = Post.limit(3)
+    if params[:category]
+      @posts = Post.searchByCategory(params[:category])
+    elsif params[:tag]
+      @posts = Post.searchByTag(params[:tag])
+    else
+      @posts = Post.all
+      @first_three_posts = Post.limit(3)
+    end
+    @categories = Category.all
+    @tags = Tag.all
   end
 
   # GET /posts/1

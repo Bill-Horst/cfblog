@@ -6,6 +6,35 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Post.create(title: "Flip Phones in 2018!", subtitle: "Why you should get a flip phone!", imageurl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuTtmgOnl8ZZ8b1tmzCWOYS0YskXn_Y_ditGSbWIeBrglgnn10Ew", post_body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget nisi blandit risus euismod porta. Curabitur massa elit, aliquet nec mattis at, bibendum vel nunc. Integer erat ipsum, suscipit in odio sit amet, porttitor suscipit turpis. Phasellus blandit imperdiet semper. Proin venenatis, mi sit amet iaculis facilisis, eros nisl aliquam elit, ac commodo orci dui in mauris. Nam sodales dui vel justo aliquet dictum. Nunc molestie id felis eget molestie. Morbi velit justo, ornare eget ligula vitae, pellentesque aliquet leo. Aliquam erat volutpat. Quisque dignissim ligula sed nunc fermentum, dictum bibendum odio consectetur. Vestibulum eu tristique arcu, ut condimentum velit. Phasellus sit amet viverra sem. Aenean sagittis ligula eget lectus malesuada convallis. Sed eget erat eget lorem mattis congue eget et libero.")
-Post.create(title: "盗まれたはんこ", subtitle: "盗まれたはんこの悲しい極まりない話です。", imageurl:"stamp.jpeg", post_body: "秋わむ日典ごっひ気訟ヒセ株載81検エナ幕職ど前過フシテハ外隣セノホ以昇目ーぐぽ容文シウリ幕校を回96低ス五象ょっめ。権員能レンゃ分秋ろはだば夜王さリょ術敗おじれ録5需会れトゆ征稿朝構邪びフ量5代ぱぶと差42時すざ礼幸ハ一植り果泊ヒキ提之押でにあべ。少ゃぼづリ期又ヤユ経万アレニラ手譜ラせリ絵田チセヌホ各熨レ春百ノチ美問刊め実未ケア社法ンだやリ作五サロワユ護漏頂響吉フがルば。切と渡府カアナレ米微ト動年ホセ日哲メモカル海納どリンろ賀要レル策整ぴあッう病断心禁かねら新親特うてくぜ二本日ぜをリぶ政生やむぐで演壮憶軒悩ろで。終事冬ソキツ氷鹿ゃぐ永東ヱ禁埋ニアシ保井フ必教わづ拝断スずす反阜をゆな友現視っ面二想げみもむ。学のレでこ日状ノユタヌ玲21案だす欧現質ふ図禁メ明無ノエネコ投治こぴ話7家ホ並6職ケク効王ぜス出奮属奥書準スラって。生舞ぜぞをし出呈みれ点9白任リ管航つフとる数圏ミア埼13調府互89念ルタメ両町ッおまを額悪打て改覧づス脂通れょトま真否戻杯緊えク。災ぜえどは銀53応モ記給県どょぎざ条勢広チヘソ因以むてしう琉作づざル次国競マ伝作どすッ況二想かざ。門キトエ警止ミ前直あせむフ芸蔵かみれを負夢ょとッ金卒ヲニヌ社桃松オユ掲教ルイヲフ渡報ンがスけ球6魚ヲヒ連地ロホ寄焦キヘルヲ次宣メラチ境招題ハコ能金まで人現抽けぼはく。16像べげ二市きぴリふ始仁産カ全治ヤロ藤書ば択然ごま硬二ヌ必清リムコヲ許竹げ名育きく時手シセ読7能困摘囲佳ぜ。14午せラ回会ワナラ対育元ヒホミ真38季ッ波記ヱコオカ幕歌継め直法すっせ題岩ネヒケレ名労べひくと夕理取覚ぜひもゃ官掲タマヲム都面ょろ。事史ウア認質ょをぞび己宮ヘ旅過ぶる鉄活へ局高へぞ智2置ツヤフマ洲点さーンき読課集星シヒ愛攻フニムラ壊別ぴ用害阪評庫ぼぎえ。")
-Post.create(title: "Test Title", subtitle: "Test Subtitle", imageurl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzwHeGb9YcRpelhsyP-WKvx7ZoggVTaT9j37wvtqOHyltNhJhb", post_body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget nisi blandit risus euismod porta. Curabitur massa elit, aliquet nec mattis at, bibendum vel nunc. Integer erat ipsum, suscipit in odio sit amet, porttitor suscipit turpis. Phasellus blandit imperdiet semper. Proin venenatis, mi sit amet iaculis facilisis, eros nisl aliquam elit, ac commodo orci dui in mauris. Nam sodales dui vel justo aliquet dictum. Nunc molestie id felis eget molestie. Morbi velit justo, ornare eget ligula vitae, pellentesque aliquet leo. Aliquam erat volutpat. Quisque dignissim ligula sed nunc fermentum, dictum bibendum odio consectetur. Vestibulum eu tristique arcu, ut condimentum velit. Phasellus sit amet viverra sem. Aenean sagittis ligula eget lectus malesuada convallis. Sed eget erat eget lorem mattis congue eget et libero.")
+Post.delete_all
+Category.delete_all
+
+Category.create(name: "Dogs")
+Category.create(name: "Flip Phones")
+Category.create(name: "Stamps")
+
+Post.create(
+  [
+    {
+      title: "Flip Phones in 2018!",
+      subtitle: "Why you should get a flip phone!",
+      imageurl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuTtmgOnl8ZZ8b1tmzCWOYS0YskXn_Y_ditGSbWIeBrglgnn10Ew",
+      post_body: "Lorem Ipsum",
+      category_id: Category.first.id
+    },
+    {
+      title: "盗まれたはんこ",
+      subtitle: "盗まれたはんこの悲しい極まりない話です。",
+      imageurl:"stamp.jpeg",
+      post_body: "秋わむ日典ごっひ気訟ヒセ株載81",
+      category_id: Category.first.id
+    },
+    {
+      title: "Test Title",
+      subtitle: "Test Subtitle",
+      imageurl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzwHeGb9YcRpelhsyP-WKvx7ZoggVTaT9j37wvtqOHyltNhJhb",
+      post_body: "Lorem ipsum",
+      category_id: Category.last.id
+    }
+  ]
+)
