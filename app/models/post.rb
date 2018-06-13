@@ -8,8 +8,7 @@ class Post < ApplicationRecord
   end
 
   def self.searchByTag(tag_id)
-    tag = Tag.find(tag_id)
-    tag.posts
+    Tag.find(tag_id).posts
   end
 
   # TODO: make these search calls dynamic

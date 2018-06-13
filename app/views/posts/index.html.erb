@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<% if @first_three_posts %>
+<% if @example_posts %>
 <div id="carousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @first_three_posts.each_with_index do |post, index| %>
-    <li data-target="#carousel" data-slide-to="<%= index %>" class="<%= "active" if post == @first_three_posts.first %>"></li>
+    <% @example_posts.each_with_index do |post, index| %>
+    <li data-target="#carousel" data-slide-to="<%= index %>" class="<%= "active" if post == @example_posts.first %>"></li>
     <% end %>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <% @first_three_posts.each do |post| %>
-    <div class="item<%= " active" if post == @first_three_posts.first %>">
+    <% @example_posts.each do |post| %>
+    <div class="item<%= " active" if post == @example_posts.first %>">
       <%= image_tag(post.imageurl, class: 'carousel-image') %>
       <div class="carousel-caption">
         <%= post.title %>
@@ -32,11 +32,15 @@
     <span class="sr-only">Next</span>
   </a>
 </div> <!-- end of carousel -->
+<hr />
 <% end %>
 
-<hr />
 
 <div class='container'>
+
+  <% if @filter %>
+  <h2><%= @filter %></h2>
+  <% end %>
 
   <div class="row">
 
@@ -68,12 +72,12 @@
     <div class="col-md-2">
       <h1>Categories</h1>
       <% @categories.each do |category| %>
-      <p><%= link_to category.name, posts_path(:category => category.id) %></p>
+      <p><%= link_to category.name, posts_path(:category_id => category.id) %></p>
       <% end %>
 
       <h1>Tags</h1>
       <% @tags.each do |tag| %>
-      <span><%= link_to tag.name, posts_path(:tag => tag.id) %> </span>
+      <p><%= link_to tag.name, posts_path(:tag_id => tag.id) %> </p> <!-- why is this still passing an id? -->
       <% end %>
     </div>
 
@@ -84,3 +88,5 @@
 <% if signed_in? && current_user.admin? %>
 <%= link_to 'New Post', new_post_path %>
 <% end %>
+
+<!-- make so only admin can delete using cancancan -->

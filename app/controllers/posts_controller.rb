@@ -4,13 +4,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if params[:category]
-      @posts = Post.searchByCategory(params[:category])
-    elsif params[:tag]
-      @posts = Post.searchByTag(params[:tag])
+    if params[:category_id]
+      @posts = Post.searchByCategory(params[:category_id])
+      category_name = Category.searchById(params[:category_id])
+      @filter = "Posts in the \"#{category_name}\" category:"
+    elsif params[:tag_id]
+      @posts = Post.searchByTag(params[:tag_id])
+      tag_name = Tag.searchById(params[:tag_id])
+      @filter = "Posts tagged with \"#{tag_name}\":"
     else
       @posts = Post.all
-      @first_three_posts = Post.limit(3)
+      @example_posts = Post.order("RANDOM()").limit(4)
     end
     @categories = Category.all
     @tags = Tag.all
