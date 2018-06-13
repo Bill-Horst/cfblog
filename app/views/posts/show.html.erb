@@ -24,5 +24,9 @@
   <%= @post.post_body %>
 </p>
 
+<%= render 'new_comment' %>
+
+<%= render 'comments' %>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
