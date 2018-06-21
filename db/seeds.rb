@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Post.delete_all
 Category.delete_all
 Tag.delete_all
+Comment.delete_all
+Post.delete_all
 
 c1 = Category.create(name: "Technology")
 c2 = Category.create(name: "Japanese Culture")
