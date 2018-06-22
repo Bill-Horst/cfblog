@@ -39,10 +39,9 @@
 
 <h1>Tags</h1>
 <% @tags.each do |tag| %>
-<%= check_box_tag('tags[]', tag.name) %>
+<%= check_box_tag('tags[]', tag.name, Post.tag_exists(tag.name, post ? post.id : -1)) %> <!-- in model, make method that takes tag name and project id and returns 'true' if it exists on project -->
 <%= label_tag(:tags, tag.name) %>
 <% end %>
-
 
 <div class="actions">
   <%= form.submit %>

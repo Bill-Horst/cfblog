@@ -10,13 +10,17 @@
 
 <div class='post-category'>
   <h3>Category: </h3>
-  <p><%= link_to @post.category.name, posts_path(:category => @post.category.id) %></p>
+  <% if defined? category %> <!-- in the few cases there is no category, do a check -->
+  <p><%= link_to @post.category.name, posts_path(:category_id => @post.category.id) %></p>
+  <% else %>
+  <p>No category<p>
+  <% end %>
 </div>
 
 <div class='post-tags'>
   <h4>Tags: </h4>
   <% @post.tags.each do |tag| %>
-  <p><%= link_to tag.name, posts_path(:tag => tag.id) %></p>
+  <p><%= link_to tag.name, posts_path(:tag_id => tag.id) %></p>
   <% end %>
 </div>
 

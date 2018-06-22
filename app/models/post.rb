@@ -13,6 +13,19 @@ class Post < ApplicationRecord
     Tag.find(tag_id).posts
   end
 
+  def self.tag_exists(tag_name, post_id)
+    tag_exists = false
+    post = post_id != -1 ? Post.find(post_id) : false
+    if post != false
+      post.tags.each do |tag|
+        if tag_name == tag.name
+          tag_exists = true
+        end
+      end
+    end
+    tag_exists
+  end
+
   # TODO: make these search calls dynamic
 
 end

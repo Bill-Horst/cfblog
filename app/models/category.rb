@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+  validates :name, presence: true
   has_many :posts
 
   def self.searchById(category_id)
