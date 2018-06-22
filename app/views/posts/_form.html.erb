@@ -26,10 +26,21 @@
   <%= form.text_area :imageurl, id: :post_imageurl %>
 </div>
 
-<div class="field">
+<div class="field post-body-edit-field">
   <%= form.label :post_body %>
-  <%= form.text_area :post_body, id: :post_post_body %>
+  <!-- <%= form.text_area :post_body, id: :post_post_body %> -->
+  <%= form.text_area :post_body, as: :wysihtml5, class: "wysihtml5" %>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
+</script>
 
 <h1>Categories</h1>
 <% @categories.each do |category| %>

@@ -43,6 +43,8 @@ GEM
     arel (8.0.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
     builder (3.2.3)
     byebug (9.1.0)
     cancancan (1.17.0)
@@ -195,6 +197,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-wysihtml5-rails
   byebug
   cancancan (~> 1.10)
   capybara (~> 2.13)
