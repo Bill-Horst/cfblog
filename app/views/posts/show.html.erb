@@ -25,7 +25,7 @@
 </div>
 
 <p class='post-body'>
-  <%= @post.post_body %>
+  <%= raw(@post.post_body) %>
 </p>
 
 <%= render 'new_comment' %>

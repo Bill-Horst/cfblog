@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+before_action :authenticate_user!
+load_and_authorize_resource
 
   def create
     @post = Post.find(params[:post_id])
@@ -16,7 +18,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    
+
   end
 
   private
