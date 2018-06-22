@@ -70,5 +70,3 @@ end
 gem 'devise'
 
 gem 'cancancan', '~> 1.10'
-
-gem 'tinymce-rails'
