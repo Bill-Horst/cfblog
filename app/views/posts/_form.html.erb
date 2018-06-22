@@ -11,6 +11,10 @@
 </div>
 <% end %>
 
+<script type="text/javascript" src="/assets/tinymce.js"> </script>
+<%= tinymce_assets %>
+<%= tinymce %>
+
 <div class="field">
   <%= form.label :title %>
   <%= form.text_field :title, id: :post_title %>
@@ -28,8 +32,13 @@
 
 <div class="field">
   <%= form.label :post_body %>
-  <%= form.text_area :post_body, id: :post_post_body %>
+  <!-- <%= form.text_area :post_body, id: :post_post_body %> -->
+  <%= form.text_area :post_body, id: :post_post_body, :class => "tinymce", :rows => 40, :cols => 120 %>
 </div>
+
+<!-- <%= text_area_tag :content, "", :class => "tinymce", :rows => 40, :cols => 120 %> -->
+
+
 
 <h1>Categories</h1>
 <% @categories.each do |category| %>

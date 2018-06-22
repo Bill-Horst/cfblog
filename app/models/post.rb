@@ -15,7 +15,8 @@ class Post < ApplicationRecord
 
   def self.tag_exists(tag_name, post_id)
     tag_exists = false
-    post = post_id != -1 ? Post.find(post_id) : false
+    puts post_id
+    post = post_id != -1 && post_id != nil ? Post.find(post_id) : false
     if post != false
       post.tags.each do |tag|
         if tag_name == tag.name

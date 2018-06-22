@@ -59,7 +59,7 @@
           <div class='row'>
             <div class='col-sm-6'>
               <%= link_to 'Show', post, :class => "btn btn-info" %>
-              <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-warning" %>
+              <%= link_to 'Edit', edit_post_path(post), :"data-turbolinks" => false, :class => "btn btn-warning" %>
               <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
             </div>
           </div>
