@@ -1,67 +1,8 @@
-// Place all the styles related to the simple_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'application';
 
-// NAVBAR SECTION
-.navbar {
-  border-bottom-color: black;
-  border-bottom-width: 2px;
-
-}
-
-#sign-in-button {
-  margin-right: 10px;
-  margin-left: 15px;
-}
-
-.nav  {
-  li {
-    padding-right: 5px;
-  }
-}
-
-// END NAVBAR SECTION
-
-
-// POST EDIT PAGE
-.post-body-edit-field {
-  border: 1px solid black;
-  padding: 5px;
-  background-color: #eee;
-  border-radius: 5px;
-}
-
-.wysihtml5-sandbox {
-  width: 100% !important;
-}
-// END POST EDIT PAGE
-
-
-// FOOTER
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px !important; // *!*!keep same as height of .footer*!*!
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px !important; // *!*!keep same as margin-bottom of body*!*!
-  background-color: #f7f7f7;
-}
-
-// END FOOTER
-
-
-// POST PAGE
-
+// POST INDEX PAGE
 .carousel-image {
-  height: 500px !important;
+  height: 500px;
   width: 800px;
   margin: auto;
 }
@@ -71,11 +12,10 @@ body {
 }
 
 .carousel-caption {
-  margin-bottom: 100px;
+  background-color: rgba(245, 245, 244, 0.7);
   font-size: 4em;
-  background-color: white;
-  color: black;
-  border-radius: 10px;
+  margin-bottom: 100px;
+  padding-top: 25px;
 }
 
 .carousel-read-post-button {
@@ -86,14 +26,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   bottom: 10%;
-  background-color: white;
-  color: black;
+  background-color: $main-red;
+  color: $main-yellow !important;
   border: none;
 }
 
 .carousel-read-post-button:hover {
-  background-color: black;
-  color: white;
+  background-color: $main-yellow;
+  color: $main-red !important;
 }
 
 .thumbnail {
@@ -118,17 +58,53 @@ body {
   border: none;
 }
 
-// END POST PAGE
+// END POST INDEX PAGE
 
 
-// INDIVIDUAL POST PAGE
+// POST SHOW PAGE
+#post-show-page {
 
-.post-title, .post-subtitle {
-  text-align: center;
+  .post-show-container {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .post-show-title-section {
+    background-color: $main-yellow;
+  }
+
+  .post-show-title, .post-show-subtitle {
+    text-align: center;
+    color: $main-red;
+  }
+
+  .post-show-body {
+    background-color: #eea;
+  }
+
+  .post-categories-and-tags-well {
+    border: solid 1px grey;
+    border-radius: 2px;
+    padding: 10px;
+    background-color: $main-yellow;
+    margin: 5px;
+    color: $main-red;
+  }
+
+}
+// END POST SHOW PAGE
+
+
+// POST EDIT PAGE
+.post-body-edit-field {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #eee;
+  border-radius: 5px;
 }
 
-.post-body {
-  text-align: justify;
+.wysihtml5-sandbox {
+  width: 100% !important;
+  min-height: 800px !important;
 }
-
-// END INDIVIDUAL POST PAGE
+// END POST EDIT PAGE

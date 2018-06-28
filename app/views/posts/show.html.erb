@@ -1,32 +1,73 @@
-<p id="notice"><%= notice %></p>
+<div id="post-show-page">
 
-<h1 class='post-title'>
-  <%= @post.title %>
-</h1>
+  <p id="notice"><%= notice %></p>
 
-<h2 class='post-subtitle'>
-  <%= @post.subtitle %>
-</h2>
+  <div class="container-fluid post-show-container">
 
-<div class='post-category'>
-  <h3>Category: </h3>
-  <p><%= link_to @post.category.name, posts_path(:category_id => @post.category.id) %></p>
-  </div>
+    <div class="post-show-title-section">
+      <h1 class="post-show-title">
+        <%= @post.title %>
+      </h1>
 
-  <div class='post-tags'>
-    <h4>Tags: </h4>
-    <% @post.tags.each do |tag| %>
-    <p><%= link_to tag.name, posts_path(:tag_id => tag.id) %></p>
+      <h2 class="post-show-subtitle">
+        <%= @post.subtitle %>
+      </h2>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-9">
+          <p class="post-show-body">
+            <%= raw(@post.post_body) %>
+          </p>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="post-categories-and-tags-well hover-transition-links">
+            <div class="post-show-categories">
+              <h4>This post's category: </h4>
+              <%= link_to @post.category.name, posts_path(:category_id => @post.category.id) %>
+            </div>
+            <div class="post-show-tags">
+              <h4>This post's tags: </h4>
+              <% @post.tags.each do |tag| %>
+              <p><%= link_to tag.name, posts_path(:tag_id => tag.id) %></p>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="post-categories-and-tags-well hover-transition-links">
+            <h4>All categories:</h4>
+            <% @categories.each do |category| %>
+            <span>
+              <%= link_to category.name, posts_path(:category_id => category.id) %>
+              <%= "- " unless category == @categories.last %>
+            </span>
+            <% end %>
+            <h4>All tags:</h4>
+            <% @tags.each do |tag| %>
+            <span>
+              <%= link_to tag.name, posts_path(:tag_id => tag.id) %>
+              <%= "- " unless tag == @tags.last %>
+            </span>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="well">
+      <%= render 'new_comment' %>
+      <%= render 'comments' %>
+      <% if current_user && current_user.admin? %>
+    </div>
+
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %>
     <% end %>
+
   </div>
 
-  <p class='post-body'>
-    <%= raw(@post.post_body) %>
-  </p>
-
-  <%= render 'new_comment' %>
-
-  <%= render 'comments' %>
-
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %>
+</div>

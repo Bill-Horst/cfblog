@@ -8,7 +8,7 @@ class Ability
       if user.admin?
         can :manage, :all
       else
-        can :read, :all
+        can :read, Post, :all
       end
 
     user ||= User.new
