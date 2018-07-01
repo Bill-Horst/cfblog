@@ -9,6 +9,14 @@ class Post < ApplicationRecord
     Post.where('category_id = ?', "#{category_id}")
   end
 
+  def self.searchByContent(search_term)
+    if Rails.env.development?
+      Post.where('post_body LIKE ? OR title LIKE ?', "%#{search_term}%", "%#{search_term}%")
+    elsif Rails.env.production?
+      Post.where('post_body ilike ? OR title ilike ?', "%#{search_term}%", "%#{search_term}%")
+    end
+  end
+
   def self.searchByTag(tag_id)
     Tag.find(tag_id).posts
   end

@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if params[:q] %>
+<h2>Posts containing "<%= params[:q] %>"</h2>
+<% end %>
+
 <% if @example_posts %>
 <div class="container">
   <div id="carousel" class="carousel slide" data-ride="carousel">

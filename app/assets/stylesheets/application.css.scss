@@ -20,7 +20,13 @@ $main-yellow: #fff5cc;
 $main-light-grey: #f5f5f4;
 
 body {
+  padding-top: 50px; // To offset body for fixed navbar
   background-color: $main-light-grey;
+}
+
+#body {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 // NAVBAR SECTION

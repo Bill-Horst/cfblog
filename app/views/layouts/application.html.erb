@@ -11,61 +11,79 @@
 </head>
 
 <body data-spy='scroll' data-target='.navbar'>
+  <div id="body">
 
-  <!-- NAVIGATION BAR -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- BRAND -->
-        <%= link_to "Bill's Ruby Blog", root_path, :class => "navbar-brand" %>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- BRAND -->
+          <%= link_to "Bill's Ruby Blog", root_path, :class => "navbar-brand" %>
 
-      </div>
+        </div>
 
-      <!-- RIGHT SIDE OF NAVIGATION BAR -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
+        <!-- RIGHT SIDE OF NAVIGATION BAR -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
 
-          <% if user_signed_in? && current_user.admin? %>
-          <li><%= link_to "New Post", new_post_path, :"data-turbolinks" => false %></li>
+            <% if user_signed_in? && current_user.admin? %>
+            <li><%= link_to "New Post", new_post_path, :"data-turbolinks" => false %></li>
 
-          <li><%= link_to "Tags", tags_path %></li>
+            <li><%= link_to "Tags", tags_path %></li>
 
-          <li><%= link_to "Categories", categories_path %></li>
-          <% end %>
-
-          <li><%= link_to "About", pages_about_path %></li>
-
-          <li><%= link_to "Contact", pages_contact_path %></li>
-
-          <!-- <button id='sign-in-button' type="button" class="btn btn-default navbar-btn">Sign in</button> -->
-
-          <li>
-            <% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-            <% else %>
-            <%= link_to('Login', new_user_session_path) %>
+            <li><%= link_to "Categories", categories_path %></li>
             <% end %>
-          </li>
 
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+            <li><%= link_to "About", pages_about_path %></li>
 
-  <!-- END NAVIGATION BAR -->
+            <li><%= link_to "Contact", pages_contact_path %></li>
 
-  <% if alert || notice %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <% end %>
+            <form class="navbar-form navbar-left">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search for text or title">
+              </div>
+              <button type="submit" class="btn btn-default">Go</button>
+            </form>
 
-  <%= yield %>
+            <li>
+              <%= form_with(url: posts_path, method: 'get', local: true, class: "navbar-form") do |form| %>
+              <%= form.text_field :q, id: 'q', value: params[:q], class: "form-control", placeholder: "Search for text or title" %>
+              <%= form.submit 'Go', class: "btn btn-default" %>
+              <% end %>
+            </li>
+
+            <!-- <button id='sign-in-button' type="button" class="btn btn-default navbar-btn">Sign in</button> -->
+
+            <li>
+              <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <% else %>
+              <%= link_to('Login', new_user_session_path) %>
+              <% end %>
+            </li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- END NAVIGATION BAR -->
+
+    <% if alert || notice %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+
+  </div>
+  <!-- <div id="body"> -->
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -74,6 +92,7 @@
     </div>
   </footer>
   <!-- END FOOTER -->
+
 
 </body>
 

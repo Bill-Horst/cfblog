@@ -14,6 +14,8 @@ class PostsController < ApplicationController
       @posts = Post.searchByTag(params[:tag_id])
       tag_name = Tag.searchById(params[:tag_id])
       @filter = "Posts tagged with \"#{tag_name}\":"
+    elsif params[:q]
+      @posts = Post.searchByContent(params[:q])
     else
       @posts = Post.all
       @example_posts = Post.order("RANDOM()").limit(4)
