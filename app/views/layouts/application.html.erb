@@ -7,6 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag asset_path('logo.png'), :rel => 'icon', :type =>  'image/png' %>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 
@@ -80,8 +81,15 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <p class="text-muted">&copy; <%= Date.today.year %> Bill Horst</p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="text-muted copyright-info">&copy; <%= Date.today.year %> Bill Horst</p>
+        </div>
+        <div class="col-md-6">
+          <!-- stuff on the right side of footer goes here -->
+        </div>
+      </div>
     </div>
   </footer>
   <!-- END FOOTER -->
