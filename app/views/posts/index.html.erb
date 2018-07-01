@@ -18,9 +18,9 @@
     <div class="carousel-inner" role="listbox">
       <% @example_posts.each do |post| %>
       <div class="item hover-transition-links<%= " active" if post == @example_posts.first %>">
-        <%= image_tag(post.imageurl, class: 'carousel-image img-responsive') %>
+        <%= link_to(image_tag(post.imageurl, class: 'carousel-image img-responsive carousel-post-image'), post) %>
         <div class="carousel-caption">
-          <%= link_to post.title, post %>
+          <%= post.title %>
         </div>
       </div>
       <% end %>
@@ -52,19 +52,7 @@
     <div class="col-md-10">
       <div class='text-center'>
         <% @posts.each do |post| %>
-        <div class='col-md-6 individual-post-display'>
-          <% if post.imageurl %>
-          <%= link_to image_tag(post.imageurl, class: 'img-responsive post-image'), post %>
-          <% end %>
-          <h2><%= post.title %></h2>
-          <div class='caption'>
-            <h4 class=''>"<%= post.subtitle %>"</h4>
-          </div>
-          <% if signed_in? && current_user.admin? %>
-          <%= link_to 'Edit', edit_post_path(post), :"data-turbolinks" => false, :class => "admin-buttons" %>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin-buttons" %>
-          <% end %>
-        </div>
+        <%= render post %>
         <% end %>
       </div>
     </div>

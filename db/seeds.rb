@@ -183,7 +183,7 @@ t9 = Tag.create(name: "English language")
 #Create posts
 p1 = Post.create(title: "Flip Phones",
 subtitle: "Why You Should Get a Flip Phone!",
-imageurl:"phone.jpg",
+imageurl:"phone_img.jpg",
 post_body: post_body_html_ipsum,
 category_id: c1.id)
 p1.tags << t3
@@ -194,7 +194,7 @@ p1.tags << t9
 
 p2 = Post.create(title: "盗まれたはんこ",
 subtitle: "盗まれたはんこの悲しい極まりない話です。",
-imageurl:"hanko.jpg",
+imageurl:"hanko_img.jpg",
 post_body: post_body_japanese_ipsum,
 category_id: c2.id)
 p2.tags << t3
@@ -202,7 +202,7 @@ p2.tags << t8
 
 p3 = Post.create(title: "Dogs",
 subtitle: "Dogs on the Bed!",
-imageurl:"dog.jpg",
+imageurl:"dog_img.jpg",
 post_body: post_body_html_ipsum,
 category_id: c3.id)
 p3.tags << t1
@@ -211,7 +211,7 @@ p3.tags << t9
 
 p4 = Post.create(title: "Cats",
 subtitle: "Cats on the Bed!",
-imageurl:"cat.jpg",
+imageurl:"cat_img.jpg",
 post_body: post_body_html_ipsum,
 category_id: c3.id)
 p4.tags << t2
@@ -221,8 +221,8 @@ p4.tags << t9
 
 p5 = Post.create(title: "メードカフェ",
 subtitle: "おかえりなさいませ",
-imageurl:"cafe.jpg",
-post_body: post_body_html_ipsum,
+imageurl:"cafe_img.jpg",
+post_body: post_body_japanese_ipsum,
 category_id: c2.id)
 p5.tags << t3
 p5.tags << t6
