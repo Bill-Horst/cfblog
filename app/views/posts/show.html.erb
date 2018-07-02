@@ -4,15 +4,21 @@
 
   <div class="container-fluid post-show-container">
 
-    <div class="post-show-title-section">
-      <h1 class="post-show-title">
-        <%= @post.title %>
-      </h1>
+    <div class="post-show-background-image-container">
 
-      <h2 class="post-show-subtitle">
-        <%= @post.subtitle %>
-      </h2>
+      <div class="post-show-title-section">
+        <h1 class="post-show-title">
+          <%= @post.title %>
+        </h1>
+
+        <h2 class="post-show-subtitle">
+          <%= @post.subtitle %>
+        </h2>
+      </div>
+      <%= image_tag(@post.imageurl, class: 'post-show-background-image') %>
     </div>
+
+    <hr />
 
     <div class="container">
       <div class="row">

@@ -52,7 +52,9 @@
     <div class="col-md-10">
       <div class='text-center'>
         <% @posts.each do |post| %>
-        <%= render post %>
+
+        <%= link_to (render post), post %>
+
         <% end %>
       </div>
     </div>
