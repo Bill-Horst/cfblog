@@ -169,7 +169,7 @@ c1 = Category.create(name: "Technology")
 c2 = Category.create(name: "Japanese Culture")
 c3 = Category.create(name: "Animals")
 
-#Create tags
+# Create tags
 t1 = Tag.create(name: "dogs")
 t2 = Tag.create(name: "cats")
 t3 = Tag.create(name: "sad stories")
@@ -180,7 +180,7 @@ t7 = Tag.create(name: "predictions")
 t8 = Tag.create(name: "Japanese language")
 t9 = Tag.create(name: "English language")
 
-#Create posts
+# Create posts
 p1 = Post.create(title: "Flip Phones",
 subtitle: "Why You Should Get a Flip Phone!",
 imageurl:"phone_img.jpg",
@@ -193,7 +193,7 @@ p1.tags << t7
 p1.tags << t9
 
 p2 = Post.create(title: "盗まれたはんこ",
-subtitle: "盗まれたはんこの悲しい極まりない話です。",
+subtitle: "盗まれたはんこの悲しい話です。",
 imageurl:"hanko_img.jpg",
 post_body: post_body_japanese_ipsum,
 category_id: c2.id)
@@ -210,7 +210,7 @@ p3.tags << t4
 p3.tags << t9
 
 p4 = Post.create(title: "Cats",
-subtitle: "Cats on the Bed!",
+subtitle: "Cats in the Way!",
 imageurl:"cat_img.jpg",
 post_body: post_body_html_ipsum,
 category_id: c3.id)
@@ -227,3 +227,176 @@ category_id: c2.id)
 p5.tags << t3
 p5.tags << t6
 p5.tags << t8
+
+p6 = Post.create(title: "AI",
+subtitle: "All About AI",
+imageurl:"ai.jpg",
+post_body: post_body_html_ipsum,
+category_id: c1.id)
+p6.tags << t4
+p6.tags << t5
+p6.tags << t7
+p6.tags << t9
+
+p7 = Post.create(title: "Smart Cars",
+subtitle: "Cars of the Future?",
+imageurl:"car.jpg",
+post_body: post_body_html_ipsum,
+category_id: c1.id)
+p7.tags << t4
+p7.tags << t5
+p7.tags << t6
+p7.tags << t7
+p7.tags << t9
+
+p8 = Post.create(title: "リーマン",
+subtitle: "髪型格好いいなあ",
+imageurl:"game.jpg",
+post_body: post_body_japanese_ipsum,
+category_id: c2.id)
+p8.tags << t3
+p8.tags << t4
+p8.tags << t5
+p8.tags << t8
+
+p9 = Post.create(title: "Dangerous Dogs",
+subtitle: "Cold-blooded Killers!",
+imageurl:"chihuahua.jpg",
+post_body: post_body_html_ipsum,
+category_id: c3.id)
+p9.tags << t1
+p9.tags << t2
+p9.tags << t3
+p9.tags << t6
+p9.tags << t9
+
+p10 = Post.create(title: "Pugs",
+subtitle: "If You Don't They're Cute, Go Pug Yourself",
+imageurl:"pug.jpg",
+post_body: post_body_html_ipsum,
+category_id: c3.id)
+p10.tags << t1
+p10.tags << t4
+p10.tags << t6
+p10.tags << t9
+
+# Create comments
+Comment.create(
+  [
+    {
+      body: 'Ok, not bad',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Great product',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'NO!',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Superb quality',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Pretty good!',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Terrible!',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Ok, not bad',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Not great',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Ok',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Good thing!',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'So so',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'I\'m glad it\'s healthy',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Ok, not bad',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Great product',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'NO!',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Superb quality',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Pretty good!',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Terrible!',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Ok, not bad',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Not great',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Ok',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Good thing!',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'So so',
+      user_id: User.order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    }
+  ]
+)
