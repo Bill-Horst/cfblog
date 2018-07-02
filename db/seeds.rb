@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Delete everything to clear it all out
-Category.delete_all
 Tag.delete_all
 Comment.delete_all
 Post.delete_all
+Category.delete_all
 
 #Set the English lorem ipsum
 post_body_html_ipsum = '<h1>HTML Ipsum Presents</h1>
