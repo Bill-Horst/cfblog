@@ -9,6 +9,7 @@ class Ability
         can :manage, :all
       else
         can :read, Post, :all
+        can :create, Comment
       end
 
     user ||= User.new
