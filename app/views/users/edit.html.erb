@@ -1,6 +1,10 @@
-<h1>Editing User</h1>
+<div class="devise-form-override-body">
+  <h1>Edit Your Account Info</h1>
+  <%= render 'form', user: @user %>
 
-<%= render 'form', user: @user %>
+  <hr />
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Show', @user, class: "btn btn-block btn-default" %>
+  <br />
+  <%= link_to 'Back', users_path, class: "btn btn-block btn-default" %>
+</div>

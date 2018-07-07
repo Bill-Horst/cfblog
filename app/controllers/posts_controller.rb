@@ -20,12 +20,14 @@ class PostsController < ApplicationController
       @posts = Post.all
       @example_posts = Post.order("RANDOM()").limit(4)
     end
+    # paginate
+    @posts = @posts.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = @post.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
+    @comments = @post.comments.order("created_at DESC")
   end
 
   # GET /posts/new

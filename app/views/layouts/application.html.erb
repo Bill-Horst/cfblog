@@ -38,6 +38,8 @@
             <li><%= link_to "Tags", tags_path %></li>
 
             <li><%= link_to "Categories", categories_path %></li>
+
+            <li><%= link_to "Users", users_path %></li>
             <% end %>
 
             <li><%= link_to "About", pages_about_path %></li>
@@ -55,7 +57,14 @@
 
             <li>
               <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Change Personal Info", edit_user_path(current_user) %></li>
+                <li><%= link_to "Change Account Info", edit_user_registration_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+              </ul>
               <% else %>
               <%= link_to('Login', new_user_session_path) %>
               <% end %>
@@ -68,8 +77,10 @@
 
     <!-- END NAVIGATION BAR -->
 
-    <% if alert || notice %>
+    <% if notice %>
     <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
     <p class="alert"><%= alert %></p>
     <% end %>
 

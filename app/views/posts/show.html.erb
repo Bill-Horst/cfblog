@@ -1,7 +1,5 @@
 <div id="post-show-page">
 
-  <p id="notice"><%= notice %></p>
-
   <div class="container-fluid post-show-container">
 
     <div class="post-show-background-image-container">
@@ -64,14 +62,14 @@
       </div>
     </div>
 
-    <div class="well">
+    <div class="well slightly-darkened-background">
       <%= render 'new_comment' %>
       <%= render 'comments' %>
       <% if current_user && current_user.admin? %>
     </div>
 
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Back', posts_path %>
+    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %> |
+    <%= link_to 'Back', posts_path, class: "btn btn-default" %>
     <% end %>
 
   </div>

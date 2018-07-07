@@ -1,6 +1,13 @@
-<h1>Editing Category</h1>
+<div class="seventy-percent-width">
+  <h1>Editing Category</h1>
 
-<%= render 'form', category: @category %>
+  <%= render 'form', category: @category %>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+  <hr />
+
+  <div class="eighty-percent-width">
+    <%= link_to 'Show', @category, class: "btn btn-block btn-default" %>
+    <br />
+    <%= link_to 'Back', categories_path, class: "btn btn-block btn-default" %>
+  </div>
+</div>

@@ -1,3 +1,30 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'application';
+
+.user-show-page {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px;
+
+  .user-show-page-information {
+    border: 1px solid $main-red;
+    margin-bottom: 20px;
+    background-color: $main-red;
+    color: $main-yellow;
+    border-radius: 20px;
+  }
+
+  .first-name, .last-name {
+    font-size: 2em;
+    line-height: 50px;
+  }
+
+  .btn {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+}

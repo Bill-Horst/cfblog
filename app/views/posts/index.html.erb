@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <% if params[:q] %>
 <h2>Posts containing "<%= params[:q] %>"</h2>
 <% end %>
@@ -47,6 +45,10 @@
   <h2><%= @filter %></h2>
   <% end %>
 
+  <% if signed_in? && current_user.admin? %>
+  <%= link_to 'New Post', new_post_path, :class => "admin-buttons post-index-admin-buttons" %>
+  <% end %>
+
   <div class="row">
 
     <div class="col-md-10">
@@ -56,6 +58,16 @@
         <%= link_to (render post), post %>
 
         <% end %>
+
+        <!-- will_paginate @posts %> -->
+        <div class="digg_pagination post-pagination-index">
+          <div class="page_info">
+            <%= page_entries_info @posts %>
+          </div>
+          <%= will_paginate @posts, :container => false %>
+        </div>
+        <!-- end will_paginate @posts %> -->
+
       </div>
     </div>
 
@@ -74,9 +86,3 @@
   </div>
 
 </div>
-
-<% if signed_in? && current_user.admin? %>
-<%= link_to 'New Post', new_post_path, :class => "admin-buttons" %>
-<% end %>
-
-<!-- make so only admin can delete using cancancan -->

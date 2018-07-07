@@ -78,6 +78,37 @@
   border-radius: 10px;
 }
 
+.post-pagination-index {
+  text-align: center;
+  width: 70%;
+  margin: 50px auto;
+  border: 2px solid $main-red;
+  clear: both;
+  position: relative;
+  top: 15px;
+  border-radius: 10px;
+  padding: 10px 0px 10px 0px;
+  box-shadow: 1px 1px 3px;
+
+  a {
+    font-weight: bolder;
+    color: #600;
+    text-decoration: none;
+    transition: all 300ms;
+    padding: 3px;
+    &:hover {
+      background-color: #600;
+      border-radius: 5px;
+      color: #fff5cc;
+    }
+  }
+
+  span {
+    display: none;
+  }
+}
+
+
 // END POST INDEX PAGE
 
 
@@ -108,6 +139,7 @@
     h2 {
       font-size: 2em;
     }
+
   }
 
   .post-show-title, .post-show-subtitle {
@@ -116,7 +148,7 @@
   }
 
   .post-show-body {
-    background-color: #eea;
+    // background-color: #eea;
   }
 
   .post-categories-and-tags-well {
@@ -128,6 +160,10 @@
     color: $main-red;
   }
 
+  .post-reviews {
+    padding: 10px;
+  }
+
 }
 // END POST SHOW PAGE
 
@@ -136,7 +172,7 @@
 .post-body-edit-field {
   border: 1px solid black;
   padding: 5px;
-  background-color: #eee;
+  background-color: $main-red;
   border-radius: 5px;
 }
 

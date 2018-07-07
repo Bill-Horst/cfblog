@@ -15,17 +15,17 @@
   <div class="col-md-8">
     <div class="field">
       <%= form.label :title %>
-      <%= form.text_field :title, id: :post_title %>
+      <%= form.text_field :title, id: :post_title, class: "form-control" %>
     </div>
 
     <div class="field">
       <%= form.label :subtitle %>
-      <%= form.text_area :subtitle, id: :post_subtitle %>
+      <%= form.text_field :subtitle, id: :post_subtitle, class: "form-control" %>
     </div>
 
     <div class="field">
       <%= form.label :imageurl %>
-      <%= form.text_area :imageurl, id: :post_imageurl %>
+      <%= form.text_field :imageurl, id: :post_imageurl, class: "form-control" %>
     </div>
 
     <div class="field">
@@ -63,6 +63,6 @@
 </div>
 
 <div class="actions">
-  <%= form.submit %>
+  <%= form.submit "Create Post", class: "admin-buttons" %>
 </div>
 <% end %>

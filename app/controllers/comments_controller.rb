@@ -18,7 +18,10 @@ load_and_authorize_resource
   end
 
   def destroy
-
+    @comment = Comment.find(params[:id])
+    post = @comment.post
+    @comment.destroy
+    redirect_to post
   end
 
   private

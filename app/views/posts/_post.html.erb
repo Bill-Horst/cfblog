@@ -7,7 +7,7 @@
     <h4 class=''>"<%= post.subtitle %>"</h4>
   </div>
   <% if signed_in? && current_user.admin? %>
-  <%= link_to 'Edit', edit_post_path(post), :"data-turbolinks" => false, :class => "admin-buttons" %>
-  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin-buttons" %>
+  <%= link_to 'Edit', edit_post_path(post), :"data-turbolinks" => false, :class => "admin-buttons post-index-admin-buttons" %>
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "admin-buttons post-index-admin-buttons" %>
   <% end %>
 </div>

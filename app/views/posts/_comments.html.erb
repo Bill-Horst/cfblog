@@ -1,20 +1,14 @@
 <div class="post-reviews">
-    <% @comments.each do |comment| %>
-        <div class="row">
-            <hr>
-            <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
-            <p><%= comment.body %></p>
-        </div>
-    <% end %>
-
-    <!-- <%= will_paginate @comments %> -->
-    <div class="digg_pagination">
-    <div class="page_info">
-      <%= page_entries_info @comments %>
-    </div>
-    <%= will_paginate @comments, :container => false %>
+  <h2>Comments:</h2>
+  <% @comments.each do |comment| %>
+  <div class="row">
+    <hr>
+    <p><em>"<%= comment.body %>"</em></p>
+    <p>&nbsp- <%= comment.user.first_name %></p>
+    <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
   </div>
+  <% if current_user && current_user.admin? %>
+  <%= link_to ('<span class="glyphicon glyphicon-remove"></span> (delete comment)').html_safe, post_comment_path(comment.post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn admin-buttons" %>
+  <% end %>
+  <% end %>
 </div>
-
-<!-- make it so the author who's writing can choose the category and tags for the post while he's writing it and
-that he can create a category or tag on the fly and attach it to the post -->
