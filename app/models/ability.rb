@@ -12,7 +12,7 @@ class Ability
       end
 
     user ||= User.new
-    can :manage, User, id: user.id
+    can :edit, User, id: user.id
 
     #
     # The first argument to `can` is the action you are giving the user
