@@ -18,7 +18,7 @@ class PostsController < ApplicationController
       @posts = Post.searchByContent(params[:q])
     else
       @posts = Post.all
-      @example_posts = Post.order("RANDOM()").limit(4)
+      @example_posts = Post.where("imageurl != ''").order("RANDOM()").limit(4)
     end
     # paginate
     @posts = @posts.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
@@ -43,10 +43,11 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    params[:tags].each do |tag|
-      @post.tags << Tag.searchByName(tag)
+    if(params.has_key?(:tags))
+      params[:tags].each do |tag|
+        @post.tags << Tag.searchByName(tag)
+      end
     end
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }

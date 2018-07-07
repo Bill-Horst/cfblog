@@ -10,7 +10,11 @@
   <% @users.each do |user| %>
   <div class="row simple-display-page-row">
     <div class="col-md-6">
+      <% if user.first_name || user.last_name %>
       <span><%= user.first_name %>&nbsp<%= user.last_name %></span>
+      <% else %>
+      <span>Anonymous</span>
+      <% end %>
       <p><%= user.email %></p>
     </div>
     <div class="col-md-2">

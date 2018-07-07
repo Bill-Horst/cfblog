@@ -4,7 +4,13 @@
   <div class="row">
     <hr>
     <p><em>"<%= comment.body %>"</em></p>
-    <p>&nbsp- <%= comment.user.first_name %></p>
+    <p>&nbsp-
+      <% if comment.user.first_name %>
+      <%= comment.user.first_name %>
+      <% else %>
+      Anonymous User
+      <% end %>
+    </p>
     <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
   </div>
   <% if current_user && current_user.admin? %>
