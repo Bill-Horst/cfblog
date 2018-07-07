@@ -10,10 +10,11 @@ class Ability
       else
         can :read, Post, :all
         can :create, Comment
+        can :manage, User, id: user.id
       end
 
-    user ||= User.new
-    can :edit, User, id: user.id
+    # user ||= User.new
+    # can :edit, User, id: user.id
 
     #
     # The first argument to `can` is the action you are giving the user
