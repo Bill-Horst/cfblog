@@ -228,14 +228,15 @@ p5.tags << t3
 p5.tags << t6
 p5.tags << t8
 
-p6 = Post.create(title: "AI",
-subtitle: "All About AI",
-imageurl:"ai.jpg",
+p6 = Post.create(title: "Dangerous Dogs",
+subtitle: "Cold-blooded Killers!",
+imageurl:"chihuahua.jpg",
 post_body: post_body_html_ipsum,
-category_id: c1.id)
-p6.tags << t4
-p6.tags << t5
-p6.tags << t7
+category_id: c3.id)
+p6.tags << t1
+p6.tags << t2
+p6.tags << t3
+p6.tags << t6
 p6.tags << t9
 
 p7 = Post.create(title: "Smart Cars",
@@ -259,19 +260,18 @@ p8.tags << t4
 p8.tags << t5
 p8.tags << t8
 
-p9 = Post.create(title: "Dangerous Dogs",
-subtitle: "Cold-blooded Killers!",
-imageurl:"chihuahua.jpg",
+p9 = Post.create(title: "AI",
+subtitle: "All About AI",
+imageurl:"ai.jpg",
 post_body: post_body_html_ipsum,
-category_id: c3.id)
-p9.tags << t1
-p9.tags << t2
-p9.tags << t3
-p9.tags << t6
+category_id: c1.id)
+p9.tags << t4
+p9.tags << t5
+p9.tags << t7
 p9.tags << t9
 
 p10 = Post.create(title: "Pugs",
-subtitle: "If You Don't They're Cute, Go Pug Yourself",
+subtitle: "If You Don't Like Them, Go Pug Yourself",
 imageurl:"pug.jpg",
 post_body: post_body_html_ipsum,
 category_id: c3.id)
@@ -284,118 +284,238 @@ p10.tags << t9
 Comment.create(
   [
     {
-      body: 'Ok, not bad',
-      user_id: User.order('RANDOM()').first.id,
+      body: 'Yeah! So true!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
-      body: 'Great product',
-      user_id: User.order('RANDOM()').first.id,
+      body: 'You\'re a terrible, terrible person',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
-      body: 'NO!',
-      user_id: User.order('RANDOM()').first.id,
+      body: 'Dude yuor grammr and speling is teh worstest',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
-      body: 'Superb quality',
-      user_id: User.order('RANDOM()').first.id,
+      body: 'My friends, contact me for a free trial of the best pills.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
-      body: 'Pretty good!',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Terrible!',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Ok, not bad',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Not great',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Ok',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Good thing!',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'So so',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'I\'m glad it\'s healthy',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Ok, not bad',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Great product',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'NO!',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Superb quality',
-      user_id: User.order('RANDOM()').first.id,
-      post_id: Post.order('RANDOM()').first.id
-    },
-    {
-      body: 'Pretty good!',
-      user_id: User.order('RANDOM()').first.id,
+      body: 'Nice post, man!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
       body: 'Terrible!',
-      user_id: User.order('RANDOM()').first.id,
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'You\'re so stupid, you don\'t know what you\'re talking about.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Not your best post, man.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Superbly written!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Good thing you know your stuff!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Fantastic!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'You know that\s all BS, right?',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Ok, not a bad post.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Great! Very informative!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'NO!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Superb quality post.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Pretty good!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Terrible!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
       body: 'Ok, not bad',
-      user_id: User.order('RANDOM()').first.id,
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
       body: 'Not great',
-      user_id: User.order('RANDOM()').first.id,
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
-      body: 'Ok',
-      user_id: User.order('RANDOM()').first.id,
+      body: 'So so post, man.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
-      body: 'Good thing!',
-      user_id: User.order('RANDOM()').first.id,
+      body: 'Good info!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     },
     {
       body: 'So so',
-      user_id: User.order('RANDOM()').first.id,
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Yeah! So true!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'You\'re a terrible, terrible person',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Dude yuor grammr and speling is teh worstest',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'My friends, contact me for a free trial of the best pills.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Nice post, man!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Terrible!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'You\'re so stupid, you don\'t know what you\'re talking about.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Not your best post, man.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Superbly written!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Good thing you know your stuff!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Fantastic!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'You know that\s all BS, right?',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Ok, not a bad post.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Great! Very informative!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'NO!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Superb quality post.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Pretty good!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Terrible!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Ok, not bad',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Not great',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'So so post, man.',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Good info!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'So so',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
+      post_id: Post.order('RANDOM()').first.id
+    },
+    {
+      body: 'Yeah! So true!',
+      user_id: User.where(admin: false).order('RANDOM()').first.id,
       post_id: Post.order('RANDOM()').first.id
     }
   ]
